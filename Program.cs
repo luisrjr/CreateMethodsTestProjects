@@ -265,25 +265,19 @@ string externalDomain = "hayworth.com";
 for (int i = 0; i < corporate.GetLength(0); i++) 
 {
     // display internal email addresses
-    string firstname = corporate[i,0].ToString();
-    string lastName = corporate[i,1].ToString();
-    string fullName = firstname+","+lastName; 
-    DisplayEmail(fullName);
+    DisplayEmail(first: corporate[i,0], last: corporate[i,1]);
 }
 
 for (int i = 0; i < external.GetLength(0); i++) 
 {
     // display external email addresses
-    string firstname = external[i,0].ToString();
-    string lastName = external[i,1].ToString();
-    string fullName = firstname+","+lastName; 
-    DisplayEmail(fullName, externalDomain);
+    DisplayEmail(first: external[i,0], last: external[i,1], externalDomain);
 }
 
-void DisplayEmail(string employeeName, string domain = "contoso.com")
+void DisplayEmail(string first, string last, string domain = "contoso.com")
 {
-    string[] name = employeeName.Split(',');
-    string firstInitial = name[0].Substring(0,2).ToLower();
-    string lastName = name[1].ToLower();
+    
+    string firstInitial = first.Substring(0,2).ToLower();
+    string lastName = last.ToLower();
     Console.WriteLine($"{firstInitial}{lastName}@{domain}");
 }
