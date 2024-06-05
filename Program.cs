@@ -245,7 +245,7 @@ void ShowRSVPs()
     }
 }
 
-*/
+
 
 string[,] corporate = 
 {
@@ -281,3 +281,5 @@ void DisplayEmail(string first, string last, string domain = "contoso.com")
     string lastName = last.ToLower();
     Console.WriteLine($"{firstInitial}{lastName}@{domain}");
 }
+
+/*
